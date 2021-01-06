@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -23,9 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>记录Hexo博客的创建 - Hexo</title>
+  
+    <meta name="keywords" content="教程">
   
 
+  
+    <meta name="description" content="​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客">
   
 
   <!-- feed -->
@@ -58,7 +58,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +309,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -374,7 +374,7 @@
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -385,110 +385,276 @@
         
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-      
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/">
+      <h1 class="title">
         记录Hexo博客的创建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-01-06</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 6, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="记录Hexo博客的创建" data-path="/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客</p>
+<a id="more"></a>
+
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>通过官网下载或下载学长发的安装包解压Node.js安装包即可</p>
+<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>通过官网下载或下载学长发的安装包解压GIT安装包即可</p>
+<h6 id="检查GIT是否安装成功"><a href="#检查GIT是否安装成功" class="headerlink" title="检查GIT是否安装成功"></a>检查GIT是否安装成功</h6><p>找到GIT对应文件夹<img src="C:\blog\source_posts\记录Hexo博客的创建~4TY`[`S{T5MOL9Y}MV]JRJ.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建~4TY`[`S{T5MOL9Y}MV]JRJ.png" srcset="data:image/png;base64,666"></p>
+<p>找到git-bash并打开</p>
+<p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>若有提示对应的版本号，则Git安装成功！</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><h4 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h4><p>进入GitHub官网 点击 sign up注册账号（人机验证或许需要科学上网？可通过安装浏览器插件解决）</p>
+<h4 id="创建repository"><a href="#创建repository" class="headerlink" title="创建repository"></a>创建repository</h4><p>点击new repository 注意repository name 是</p>
+<p>你的github账号名.github.io</p>
+<p>点击creating repository..创建仓库</p>
+<h3 id="安装本地Hexo"><a href="#安装本地Hexo" class="headerlink" title="安装本地Hexo"></a>安装本地Hexo</h3><h4 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h4><p>首先在你想要在本地放blog的地方新建blog文件夹</p>
+<p>并对文件夹右键<img src="C:\blog\source\_posts\记录Hexo博客的创建\JU][66M81G[{_JY7Y_F8F2N.png" class="lazyload" data-srcset="C:\blog\source\_posts\记录Hexo博客的创建\JU][66M81G[{_JY7Y_F8F2N.png" srcset="data:image/png;base64,666" style="zoom: 50%;" /></p>
+<p>点击Git Bash Here(功能类似与cd blog)</p>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>如图即为安装成功：</p>
+<p><img src="C:\blog\source_posts\记录Hexo博客的创建\KSBQ622N[%9X@%KK{RH@4J6.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建\KSBQ622N[%9X@%KK{RH@4J6.png" srcset="data:image/png;base64,666"></p>
+<h4 id="新建hexo文件夹"><a href="#新建hexo文件夹" class="headerlink" title="新建hexo文件夹"></a>新建hexo文件夹</h4><p>在blog文件夹下新建Hexo文件夹 右键点击Git Bash Here</p>
+<p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>如图即为安装成功</p>
+<p><img src="C:\blog\source_posts\记录Hexo博客的创建%3T@8]VF23XPS_@6Z`L9}GV.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建%3T@8]VF23XPS_@6Z`L9}GV.png" srcset="data:image/png;base64,666"></p>
+<h4 id="检验效果（预览blog）"><a href="#检验效果（预览blog）" class="headerlink" title="检验效果（预览blog）"></a>检验效果（预览blog）</h4><p>下面来检验一下效果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>若git提示下列代码则说明成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO Hexo is running at http:&#x2F;&#x2F;0.0.0.0:4000&#x2F;. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>在浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 查看预览效果（Ctrl+C可以关闭预览）</p>
+<p>此时本地blog就搭建好了，但只能自己访问。我们需要将blog部署到github上，来让更多人访问到我们的blog。</p>
+<h3 id="将hexo部署至github"><a href="#将hexo部署至github" class="headerlink" title="将hexo部署至github"></a>将hexo部署至github</h3><h4 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h4><p>对blog文件夹右键，点击Git Bash Here 输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your email@example.com&quot; </span><br></pre></td></tr></table></figure>
+<p>注：”your <a href="mailto:&#101;&#x6d;&#x61;&#x69;&#x6c;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#101;&#x6d;&#x61;&#x69;&#x6c;&#x40;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a>“ 是你的邮箱，eg:”<a href="mailto:&#120;&#120;&#120;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;">&#120;&#120;&#120;&#x40;&#x71;&#x71;&#46;&#99;&#x6f;&#x6d;</a>“</p>
+<p>接下来连续按三次回车，会出现一系列字符串</p>
+<p>运行以下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>将密钥保存至粘贴板</p>
+<p>或打开.ssh/id_rsa.pub文件直接复制密钥</p>
+<h4 id="在github账户上添加密钥"><a href="#在github账户上添加密钥" class="headerlink" title="在github账户上添加密钥"></a>在github账户上添加密钥</h4><p>1.</p>
+<img src="C:\blog\source\_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MDZlNzU1OC5wbmc.png" class="lazyload" data-srcset="C:\blog\source\_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MDZlNzU1OC5wbmc.png" srcset="data:image/png;base64,666" style="zoom: 67%;" />
+
+<p>2.</p>
+<img src="C:\blog\source\_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MjJiNDU4OC5wbmc.png" class="lazyload" data-srcset="C:\blog\source\_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MjJiNDU4OC5wbmc.png" srcset="data:image/png;base64,666" style="zoom:67%;" />
+
+<p>3.</p>
+<img src="C:\blog\source\_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2M2ViMWFiMi5wbmc.png" class="lazyload" data-srcset="C:\blog\source\_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2M2ViMWFiMi5wbmc.png" srcset="data:image/png;base64,666" style="zoom:67%;" />
+
+<p>4.</p>
+<p><img src="C:\blog\source_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2YmMxZmM4Ny5wbmc.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2YmMxZmM4Ny5wbmc.png" srcset="data:image/png;base64,666"></p>
+<h4 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h4><p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>接着会提示你</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Are you sure you want to continue connecting(yes&#x2F;no)?</span><br></pre></td></tr></table></figure>
+<p>输入yes</p>
+<p>若提示</p>
+<p><img src="C:\blog\source_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3MDJjNDZkNi5wbmc.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建\aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3MDJjNDZkNi5wbmc.png" srcset="data:image/png;base64,666"></p>
+<p>则ssh配置成功</p>
+<h4 id="配置git个人信息"><a href="#配置git个人信息" class="headerlink" title="配置git个人信息"></a>配置git个人信息</h4><p>输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;此处填你的用户名&quot;  </span><br><span class="line">git config --global user.email  &quot;此处填你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>此时本机已经成功与github连接</p>
+<h3 id="将本地的-Hexo-文件更新到-Github-中"><a href="#将本地的-Hexo-文件更新到-Github-中" class="headerlink" title="将本地的 Hexo 文件更新到 Github 中"></a>将本地的 Hexo 文件更新到 Github 中</h3><h4 id="修改config文件配置"><a href="#修改config文件配置" class="headerlink" title="修改config文件配置"></a>修改config文件配置</h4><p>用编程软件打开config（记事本也可以）</p>
+<p>我这里用的是vs</p>
+<p>找到关键字deploy</p>
+<p><img src="C:\blog\source_posts\记录Hexo博客的创建\G5DDK]8~U4HZMX9SLLUS]OM.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建\G5DDK]8~U4HZMX9SLLUS]OM.png" srcset="data:image/png;base64,666"></p>
+<p>repository比葫芦画瓢将dinosauryes改为自己的github用户名</p>
+<h4 id="安装deployer"><a href="#安装deployer" class="headerlink" title="安装deployer"></a>安装deployer</h4><p>在命令框中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>在网址输入https://你的GitHub用户名.github.io  完成</p>
+<h3 id="心得：不要轻言放弃！！！我重新安装了三次终于成功了。"><a href="#心得：不要轻言放弃！！！我重新安装了三次终于成功了。" class="headerlink" title="心得：不要轻言放弃！！！我重新安装了三次终于成功了。"></a>心得：不要轻言放弃！！！我重新安装了三次终于成功了。</h3><h1 id="岁月悠悠-衰微只及肌肤"><a href="#岁月悠悠-衰微只及肌肤" class="headerlink" title="岁月悠悠 衰微只及肌肤"></a>岁月悠悠 衰微只及肌肤</h1><h1 id="热忱抛弃-颓废必至灵魂"><a href="#热忱抛弃-颓废必至灵魂" class="headerlink" title="热忱抛弃 颓废必至灵魂"></a>热忱抛弃 颓废必至灵魂</h1>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/>http://example.com/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T15:10:53+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 6, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/06/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/&title=记录Hexo博客的创建 - Hexo&summary=​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/&title=记录Hexo博客的创建 - Hexo&summary=​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/&title=记录Hexo博客的创建 - Hexo&summary=​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-01-06</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/01/06/hello-world/'>
-            Read More
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/01/06/hello-world/'>
+          <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
+
+
+
+
 
 
 </div>
@@ -498,98 +664,22 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Git"><span class="toc-text">安装Git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%86%8CGithub%E8%B4%A6%E5%8F%B7"><span class="toc-text">注册Github账号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BArepository"><span class="toc-text">创建repository</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0Hexo"><span class="toc-text">安装本地Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">新建文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BAhexo%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">新建hexo文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C%E6%95%88%E6%9E%9C%EF%BC%88%E9%A2%84%E8%A7%88blog%EF%BC%89"><span class="toc-text">检验效果（预览blog）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E8%87%B3github"><span class="toc-text">将hexo部署至github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AESSH%E5%AF%86%E9%92%A5"><span class="toc-text">配置SSH密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8github%E8%B4%A6%E6%88%B7%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%AF%86%E9%92%A5"><span class="toc-text">在github账户上添加密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-text">测试是否成功</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEgit%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="toc-text">配置git个人信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E6%9C%AC%E5%9C%B0%E7%9A%84-Hexo-%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%E5%88%B0-Github-%E4%B8%AD"><span class="toc-text">将本地的 Hexo 文件更新到 Github 中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9config%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">修改config文件配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85deployer"><span class="toc-text">安装deployer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%83%E5%BE%97%EF%BC%9A%E4%B8%8D%E8%A6%81%E8%BD%BB%E8%A8%80%E6%94%BE%E5%BC%83%EF%BC%81%EF%BC%81%EF%BC%81%E6%88%91%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E4%BA%86%E4%B8%89%E6%AC%A1%E7%BB%88%E4%BA%8E%E6%88%90%E5%8A%9F%E4%BA%86%E3%80%82"><span class="toc-text">心得：不要轻言放弃！！！我重新安装了三次终于成功了。</span></a></li></ol>
     </div>
   </section>
 
-
-  
 
   
 
@@ -605,14 +695,14 @@ Qu...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="记录Hexo博客的创建";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

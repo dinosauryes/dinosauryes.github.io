@@ -5,9 +5,7 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
+      <meta name="robots" content="noindex,follow">
     
   
   <!-- 渲染优化 -->
@@ -23,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>Tag: 教程 - Hexo</title>
   
 
   
@@ -58,7 +56,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +307,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -374,7 +372,7 @@
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -384,14 +382,14 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
   
+    
+      
   <section class="post-list">
     
       
-        
-        
-          
         
           
         
@@ -440,50 +438,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/06/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-06</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/06/hello-world/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -491,6 +445,8 @@ Qu...
   
 
 
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -597,7 +553,6 @@ Qu...
 </aside>
 
 
-
         
         
           <!--此文件用来存放一些不方便取值的变量-->
@@ -612,7 +567,7 @@ Qu...
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
