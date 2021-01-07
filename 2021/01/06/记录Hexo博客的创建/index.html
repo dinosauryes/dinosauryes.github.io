@@ -452,7 +452,8 @@
 
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>通过官网下载或下载学长发的安装包解压Node.js安装包即可</p>
 <h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>通过官网下载或下载学长发的安装包解压GIT安装包即可</p>
-<h6 id="检查GIT是否安装成功"><a href="#检查GIT是否安装成功" class="headerlink" title="检查GIT是否安装成功"></a>检查GIT是否安装成功</h6><p>找到GIT对应文件夹<img src="C:\blog\source_posts\记录Hexo博客的创建~4TY`[`S{T5MOL9Y}MV]JRJ.png" class="lazyload" data-srcset="C:\blog\source_posts\记录Hexo博客的创建~4TY`[`S{T5MOL9Y}MV]JRJ.png" srcset="data:image/png;base64,666"></p>
+<h6 id="检查GIT是否安装成功"><a href="#检查GIT是否安装成功" class="headerlink" title="检查GIT是否安装成功"></a>检查GIT是否安装成功</h6><p>找到GIT对应文件夹</p>
+<p><img src="/~4TY%60%5B%60S%7BT5MOL9Y%7DMV%5DJRJ.png" class="lazyload" data-srcset="/~4TY%60%5B%60S%7BT5MOL9Y%7DMV%5DJRJ.png" srcset="data:image/png;base64,666"></p>
 <p>找到git-bash并打开</p>
 <p>输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
@@ -464,7 +465,8 @@
 <p>勾选Add a README file</p>
 <p>点击creating repository.创建仓库</p>
 <h3 id="安装本地Hexo"><a href="#安装本地Hexo" class="headerlink" title="安装本地Hexo"></a>安装本地Hexo</h3><h4 id="新建文件夹"><a href="#新建文件夹" class="headerlink" title="新建文件夹"></a>新建文件夹</h4><p>首先在你想要在本地放blog的地方新建blog文件夹</p>
-<p>并对文件夹右键<img src="C:\blog\source\_posts\记录Hexo博客的创建\JU][66M81G[{_JY7Y_F8F2N.png" class="lazyload" data-srcset="C:\blog\source\_posts\记录Hexo博客的创建\JU][66M81G[{_JY7Y_F8F2N.png" srcset="data:image/png;base64,666" style="zoom: 50%;" /></p>
+<p>并对文件夹右键</p>
+<p><img src="/JU%5D%5B66M81G%5B%7B_JY7Y_F8F2N.png" class="lazyload" data-srcset="/JU%5D%5B66M81G%5B%7B_JY7Y_F8F2N.png" srcset="data:image/png;base64,666"></p>
 <p>点击Git Bash Here(功能类似与cd blog)</p>
 <h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p>输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
@@ -485,7 +487,7 @@
 <p>此时本地blog就搭建好了，但只能自己访问。我们需要将blog部署到github上，来让更多人访问到我们的blog。</p>
 <h3 id="将hexo部署至github"><a href="#将hexo部署至github" class="headerlink" title="将hexo部署至github"></a>将hexo部署至github</h3><h4 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h4><p>对blog文件夹右键，点击Git Bash Here 输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your email@example.com&quot; </span><br></pre></td></tr></table></figure>
-<p>注：”your <a href="mailto:&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;">&#101;&#109;&#x61;&#105;&#x6c;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#109;</a>“ 是你的邮箱，eg:</p>
+<p>注：”your <a href="mailto:&#101;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;">&#101;&#x6d;&#x61;&#105;&#x6c;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#109;</a>“ 是你的邮箱，eg:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxx@qq.com&quot;</span><br></pre></td></tr></table></figure>
 <p>接下来连续按三次回车，会出现一系列字符串</p>
 <p>运行以下命令:</p>
@@ -557,7 +559,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T18:55:42+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T19:06:52+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Jan 7, 2021</p>
