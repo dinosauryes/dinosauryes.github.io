@@ -558,12 +558,17 @@
 <p>3.如果使用byte和short类型的变量，右侧数据值范围不能超过左侧类型的范围</p>
 <p>4.变量需要先赋值才能使用</p>
 <p>5.变量使用不能超过作用域的范围</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h5 id="何为方法："><a href="#何为方法：" class="headerlink" title="何为方法："></a>何为方法：</h5><p>将一个功能抽取出来，巴蒂阿玛定义在一个大括号内，形成一个单独的功能。需要这个功能时，进行调用，实现了代码的复用性。</p>
-<h5 id="定义格式："><a href="#定义格式：" class="headerlink" title="定义格式："></a>定义格式：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名称 （参数列表）&#123;</span><br><span class="line">代码</span><br><span class="line"><span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h5 id="何为方法："><a href="#何为方法：" class="headerlink" title="何为方法："></a>何为方法：</h5><p>将一个功能抽取出来，定义在一个大括号内，形成一个单独的功能。需要这个功能时，进行调用，实现了代码的复用性。</p>
+<h5 id="定义格式："><a href="#定义格式：" class="headerlink" title="定义格式："></a>定义格式：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名称 （参数类型 参数名称,...）&#123;</span><br><span class="line">	方法体</span><br><span class="line">	<span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="return"><a href="#return" class="headerlink" title="return"></a>return</h5><p>1.停止当前方法</p>
+<p>2.将后面的返回值还给调用处 </p>
+<p>3.return后面的返回值要与  <strong>返回值类型</strong>  保持一致</p>
+<p>4.对于有返回值的方法，可以使用单独调用，打印调用和赋值调用</p>
+<p>5.对于无返回值的方法，只能进行单独调用</p>
 <h5 id="注意事项：-2"><a href="#注意事项：-2" class="headerlink" title="注意事项："></a>注意事项：</h5><p>1.方法定义的先后顺序无所谓</p>
 <p>2.方法定义不能产生嵌套包含关系</p>
 <p>3.方法执行需要调用</p>
-<h5 id="调用格式："><a href="#调用格式：" class="headerlink" title="调用格式："></a>调用格式：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法名称（）;</span><br></pre></td></tr></table></figure>
+<h5 id="调用格式："><a href="#调用格式：" class="headerlink" title="调用格式："></a>调用格式：</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法名称（参数）;</span><br><span class="line">System.out.println(方法名称（参数）)</span><br><span class="line">数据类型 变量名称 = 方法名称（参数）</span><br></pre></td></tr></table></figure>
 <h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><h5 id="单if"><a href="#单if" class="headerlink" title="单if"></a>单if</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式)&#123;</span><br><span class="line">     语句体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="if-else"><a href="#if-else" class="headerlink" title="if - - else"></a>if - - else</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123;</span><br><span class="line">	语句体<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	语句体<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="多if-else"><a href="#多if-else" class="headerlink" title="多if - - else"></a>多if - - else</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (判断条件<span class="number">1</span>) &#123;</span><br><span class="line">	执行语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件<span class="number">2</span>)&#123;</span><br><span class="line">	执行语句<span class="number">2</span>;</span><br><span class="line">&#125; </span><br><span class="line">...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件n) &#123;</span><br><span class="line">	执行语句n;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	执行语句n+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -577,7 +582,79 @@
 <p>2.条件判断：若成立，循环继续；反之则跳出循环。</p>
 <p>3.循环体：重复要做的事情内容，若干行语句。</p>
 <p>4.布进语句：每次循环之后的扫尾工作。</p>
-<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始表达式; 布尔表达式; 步进表达式)&#123;</span><br><span class="line">	循环体；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><h5 id="while格式"><a href="#while格式" class="headerlink" title="while格式"></a>while格式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">while</span> (条件判断)&#123;</span><br><span class="line">	循环体;</span><br><span class="line">	步进语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do - - while 循环"></a>do - - while 循环</h4><h5 id="do-while-格式"><a href="#do-while-格式" class="headerlink" title="do - - while 格式"></a>do - - while 格式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化语句</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	循环体</span><br><span class="line">    步进语句</span><br><span class="line">&#125; <span class="keyword">while</span> (条件判断);</span><br></pre></td></tr></table></figure>
+<h4 id="三种循环的区别"><a href="#三种循环的区别" class="headerlink" title="三种循环的区别"></a>三种循环的区别</h4><p>1.若条件判断从未满足，for和while循环执行0次，do-while循环至少执行一次</p>
+<p>2.for循环的变量在小括号中定义，仅能在循环中使用。while循环和do-while循环初始化语句在括号外，循环结束后可以继续使用 </p>
+<p>3.凡是次数确定的场景多用for循环，否则用while循环</p>
+<h4 id="break关键字"><a href="#break关键字" class="headerlink" title="break关键字"></a>break关键字</h4><p>1.可以用在switch语句中，一旦执行，整个switch语句立刻结束</p>
+<p>2.可以用在循环语句中，一旦执行，整个循环语句立刻结束，打断循环</p>
+<h4 id="continue关键字"><a href="#continue关键字" class="headerlink" title="continue关键字"></a>continue关键字</h4><p>1.一旦执行，立刻跳过当前次循环内容，马上开始下一次循环</p>
+<h3 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h3><ul>
+<li><input disabled type="checkbox"> <table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alt+Enter</td>
+<td>导入包，自动修正代码</td>
+</tr>
+<tr>
+<td>Ctrl+Y</td>
+<td>删除光标所在行</td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>复制光标所在行内容，插入光标位置下面</td>
+</tr>
+<tr>
+<td>Ctrl+Alt+L</td>
+<td>格式化代码（使代码变工整）</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+/</td>
+<td>多行注释，再按取消注释</td>
+</tr>
+<tr>
+<td>Ctrl+/</td>
+<td>单行注释，再按取消注释</td>
+</tr>
+<tr>
+<td>Alt+Ins</td>
+<td>自动生成代码，toString,get,set等方法</td>
+</tr>
+<tr>
+<td>Alt+Shift+上下箭头</td>
+<td>移动当前代码行</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="IDEA常用快捷代码"><a href="#IDEA常用快捷代码" class="headerlink" title="IDEA常用快捷代码"></a>IDEA常用快捷代码</h3><table>
+<thead>
+<tr>
+<th>x.fori</th>
+<th>for(int i = 0; i &lt; 5; i++)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
   
   
     
@@ -611,10 +688,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-21T16:21:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-26T17:40:13+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 21, 2021</p>
+    <p>更新于：Apr 26, 2021</p>
   </a>
 </div>
 
@@ -740,7 +817,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-text">自动转换：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-text">强制数类型转换：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-text">注意事项：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="toc-text">何为变量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A-1"><span class="toc-text">注意事项：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">何为方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">定义格式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A-2"><span class="toc-text">注意事项：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">调用格式：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95if"><span class="toc-text">单if</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else"><span class="toc-text">if - - else</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9Aif-else"><span class="toc-text">多if - - else</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">switch语句格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">switch注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-text">for循环</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-text">自动转换：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-text">强制数类型转换：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-text">注意事项：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="toc-text">何为变量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A-1"><span class="toc-text">注意事项：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">何为方法：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">定义格式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#return"><span class="toc-text">return</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A-2"><span class="toc-text">注意事项：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-text">调用格式：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95if"><span class="toc-text">单if</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else"><span class="toc-text">if - - else</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9Aif-else"><span class="toc-text">多if - - else</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">switch语句格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">switch注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-text">while循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#while%E6%A0%BC%E5%BC%8F"><span class="toc-text">while格式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do-while-%E5%BE%AA%E7%8E%AF"><span class="toc-text">do - - while 循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#do-while-%E6%A0%BC%E5%BC%8F"><span class="toc-text">do - - while 格式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">三种循环的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#break%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">break关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#continue%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">continue关键字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
     </div>
   </section>
 
