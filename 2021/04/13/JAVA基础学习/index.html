@@ -498,7 +498,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   <p>岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。<a id="more"></a></p>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
 <li>面向过程：当需要实现一个功能时，每一个具体的步骤都要亲力亲为，详细处理每一个细节</li>
 <li>面向对象：当需要实现一个功能时，不关心具体的步骤，而是找一个以及具有该功能的，来帮我做</li>
 </ul>
@@ -525,14 +525,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><p>多态</p>
 </li>
 </ul>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><h5 id="何为常量："><a href="#何为常量：" class="headerlink" title="何为常量："></a>何为常量：</h5><p>程序运行期间固定不变的量。</p>
+<h5 id="匿名对象："><a href="#匿名对象：" class="headerlink" title="匿名对象："></a>匿名对象：</h5><p>只有右边的对象，无左边的名字和赋值运算符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in)</span><br><span class="line"><span class="keyword">int</span> num = sc.nextInt(); <span class="comment">// 普通使用方式</span></span><br><span class="line"><span class="keyword">int</span> num = <span class="keyword">new</span> Scanner(System.in).nextInt(); <span class="comment">// 匿名对象的方式</span></span><br><span class="line">methodParam(<span class="keyword">new</span> Scanner(System.in)); <span class="comment">// 使用匿名对象来传递参数</span></span><br></pre></td></tr></table></figure>
+<p>​    注意事项：</p>
+<p>匿名对象只能使用唯一的一次，下次使用要再创建一个新对象</p>
+<p>​    使用建议：</p>
+<p>若确定一个对象只需要使用唯一的一次，就可以用匿名对象</p>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><h5 id="何为常量："><a href="#何为常量：" class="headerlink" title="何为常量："></a>何为常量：</h5><p>程序运行期间固定不变的量。</p>
 <h5 id="常量的分类："><a href="#常量的分类：" class="headerlink" title="常量的分类："></a>常量的分类：</h5><p>​        1.字符串常量：用“  “引起来的部分，eg：”HelloWorld”（双引号中可为空）</p>
 <p>​        2.整型常量：数字，无小数点，eg：100，-200，0</p>
 <p>​        3.浮点数常量 : 数字，有小数点，eg：3.14，-56.00</p>
 <p>​        4.字符常量：用’’引起来的部分，eg：’A’,’B’,’泽’（双引号中不为空）<em>（java中允许使用中文字符）</em></p>
 <p>​        5.布尔常量：仅两种true,false</p>
 <p>​        6.空常量：null，代表没有任何数据。</p>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h5 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h5><p>整数型 byte short int long</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h5 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h5><p>整数型 byte short int long</p>
 <p>浮点型 float double (近似值而非精确值)</p>
 <p>字符型 char</p>
 <p>布尔型 boolean</p>
@@ -598,7 +604,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>1.数据范围与字节数不一定相关</p>
 <p>2.浮点数当中默认类型是double。如果使用float类型，需要加上后缀F</p>
 <p>3.整数中默认类型是int。如果一定要使用long类型，需要加上后缀L</p>
-<h5 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h5><p>字符串，数组，类，接口，Lambda</p>
+<h5 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h5><p>字符串，数组，类(Scanner)，接口，Lambda</p>
+<ul>
+<li>使用步骤：</li>
+</ul>
+<p>1.导包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 包路径.类名称;</span><br></pre></td></tr></table></figure>
+<p>如果需要使用的目标类和当前类位于同一个包下，则可以省略导包语句不写</p>
+<p>只有java.lang包下的内容不需要导包，其他都需要import语句</p>
+<p>2.创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名称 对象名 = <span class="keyword">new</span> 类名称</span><br></pre></td></tr></table></figure>
+<p>3.使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.成员方法名</span><br></pre></td></tr></table></figure>
 <h5 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h5><ul>
 <li>自动类型转换</li>
 </ul>
@@ -637,7 +654,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td>a</td>
 </tr>
 </tbody></table>
-<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>何为变量：</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>何为变量：</p>
 <p>​    程序运行期间，可以改变的量</p>
 <p>注意事项：</p>
 <p>​    1.如果创建多个变量，那么变量之间的名称不可以重复</p>
@@ -645,7 +662,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>​    3.如果使用byte和short类型的变量，右侧数据值范围不能超过左侧类型的范围</p>
 <p>​    4.变量需要先赋值才能使用</p>
 <p>​    5.变量使用不能超过作用域的范围</p>
-<p>成员变量与局部变量的区别:crab:</p>
+<p>成员变量与局部变量的区别</p>
 <p>​    1.定义的位置不一样</p>
 <p>​        局部变量：在方法内部</p>
 <p>​        成员变量：在方法外部，直接写在类中</p>
@@ -659,7 +676,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>​    4.内存的位置不一样</p>
 <p>​        局部变量：位于栈内存，随方法进栈而诞生，随方法出栈而消失</p>
 <p>​        成员变量：位于堆内存，随对象创建而诞生，随对象被垃圾回收而消失</p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>定义类</p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>定义类</p>
 <ol>
 <li>成员变量是直接定义在类中，在方法外面</li>
 <li>成员方法不要写static关键字</li>
@@ -696,7 +713,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>4.编写一个全参数构造方法</p>
 </li>
 </ul>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
 <li>何为方法：</li>
 </ul>
 <p>将一个功能抽取出来，定义在一个大括号内，形成一个单独的功能。需要这个功能时，进行调用，实现了代码的复用性。</p>
@@ -743,7 +760,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>4.如果没有编写任何构造方法，编译器默认编一个构造方法，无参数、方法体</p>
 <p>一旦编写，方法体不再赠送构造方法</p>
 <p>5.构造方法可以进行重载(方法名称相同，参数列表不同)</p>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>可以同时存放多个数据值</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>可以同时存放多个数据值</p>
 <ul>
 <li>特点：</li>
 </ul>
@@ -800,31 +817,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ul>
 <p>数组作为方法的返回值时，返回的是数组地址</p>
-<h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><h5 id="单if"><a href="#单if" class="headerlink" title="单if"></a>单if</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式)&#123;</span><br><span class="line">     语句体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="if-else"><a href="#if-else" class="headerlink" title="if - - else"></a>if - - else</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123;</span><br><span class="line">	语句体<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	语句体<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="多if-else"><a href="#多if-else" class="headerlink" title="多if - - else"></a>多if - - else</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (判断条件<span class="number">1</span>) &#123;</span><br><span class="line">	执行语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件<span class="number">2</span>)&#123;</span><br><span class="line">	执行语句<span class="number">2</span>;</span><br><span class="line">&#125; </span><br><span class="line">...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件n) &#123;</span><br><span class="line">	执行语句n;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	执行语句n+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h3><h5 id="switch语句格式"><a href="#switch语句格式" class="headerlink" title="switch语句格式"></a>switch语句格式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">  <span class="keyword">case</span> 常量值<span class="number">1</span>:</span><br><span class="line">    语句体<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 常量值<span class="number">2</span>:</span><br><span class="line">    语句体<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      语句体n+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="switch注意事项"><a href="#switch注意事项" class="headerlink" title="switch注意事项"></a>switch注意事项</h5><p>1.多个case后面的数值不可以重复</p>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h5 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h5><p>单if</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式)&#123;</span><br><span class="line">     语句体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if - - else</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123;</span><br><span class="line">	语句体<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	语句体<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>多if - - else</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (判断条件<span class="number">1</span>) &#123;</span><br><span class="line">	执行语句<span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件<span class="number">2</span>)&#123;</span><br><span class="line">	执行语句<span class="number">2</span>;</span><br><span class="line">&#125; </span><br><span class="line">...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (判断条件n) &#123;</span><br><span class="line">	执行语句n;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	执行语句n+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="选择语句"><a href="#选择语句" class="headerlink" title="选择语句"></a>选择语句</h5><p>switch语句格式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">  <span class="keyword">case</span> 常量值<span class="number">1</span>:</span><br><span class="line">    语句体<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 常量值<span class="number">2</span>:</span><br><span class="line">    语句体<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      语句体n+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch注意事项</p>
+<p>1.多个case后面的数值不可以重复</p>
 <p>2.swich后面的小括号中只能是：</p>
 <p>基本数据类型：byte/short/char/int</p>
 <p>引用数据类型：String字符串，enum枚举</p>
 <p>3.switch语句前后顺序可以颠倒，且break语句可以省略（匹配到case后从当前位置向下执行，直到遇到break或default）</p>
-<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>1.初始化语句：在循环开始最初执行，并且只能做唯一一次。</p>
+<h5 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h5><p>1.初始化语句：在循环开始最初执行，并且只能做唯一一次。</p>
 <p>2.条件判断：若成立，循环继续；反之则跳出循环。</p>
 <p>3.循环体：重复要做的事情内容，若干行语句。</p>
 <p>4.布进语句：每次循环之后的扫尾工作。</p>
-<h5 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始表达式; 布尔表达式; 步进表达式)&#123;</span><br><span class="line">	循环体；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h5><p>while格式</p>
+<p>for循环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (初始表达式; 布尔表达式; 步进表达式)&#123;</span><br><span class="line">	循环体；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>while循环</p>
+<p>while格式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化语句;</span><br><span class="line"><span class="keyword">while</span> (条件判断)&#123;</span><br><span class="line">	循环体;</span><br><span class="line">	步进语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="do-while-循环"><a href="#do-while-循环" class="headerlink" title="do - - while 循环"></a>do - - while 循环</h5><p>do - - while 格式</p>
+<p>do - - while 循环</p>
+<p>do - - while 格式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化语句</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	循环体</span><br><span class="line">    步进语句</span><br><span class="line">&#125; <span class="keyword">while</span> (条件判断);</span><br></pre></td></tr></table></figure>
-<h5 id="三种循环的区别"><a href="#三种循环的区别" class="headerlink" title="三种循环的区别"></a>三种循环的区别</h5><p>1.若条件判断从未满足，for和while循环执行0次，do-while循环至少执行一次</p>
+<p>三种循环的区别</p>
+<p>1.若条件判断从未满足，for和while循环执行0次，do-while循环至少执行一次</p>
 <p>2.for循环的变量在小括号中定义，仅能在循环中使用。while循环和do-while循环初始化语句在括号外，循环结束后可以继续使用 </p>
 <p>3.凡是次数确定的场景多用for循环，否则用while循环</p>
-<h5 id="break关键字"><a href="#break关键字" class="headerlink" title="break关键字"></a>break关键字</h5><p>1.可以用在switch语句中，一旦执行，整个switch语句立刻结束</p>
+<p>break关键字</p>
+<p>1.可以用在switch语句中，一旦执行，整个switch语句立刻结束</p>
 <p>2.可以用在循环语句中，一旦执行，整个循环语句立刻结束，打断循环</p>
-<h5 id="continue关键字"><a href="#continue关键字" class="headerlink" title="continue关键字"></a>continue关键字</h5><p>1.一旦执行，立刻跳过当前次循环内容，马上开始下一次循环</p>
-<h3 id="JAVA的内存划分"><a href="#JAVA的内存划分" class="headerlink" title="JAVA的内存划分"></a>JAVA的内存划分</h3><p>1**.栈(Stack)<strong>：存放方法中的局部变量，</strong>运行方法一定要在栈中**</p>
+<p>continue关键字</p>
+<p>1.一旦执行，立刻跳过当前次循环内容，马上开始下一次循环</p>
+<h2 id="JAVA的内存划分"><a href="#JAVA的内存划分" class="headerlink" title="JAVA的内存划分"></a>JAVA的内存划分</h2><p>1**.栈(Stack)<strong>：存放方法中的局部变量，</strong>运行方法一定要在栈中**</p>
 <p>​        局部变量：{}内的变量，一旦超出作用域，立刻从栈内存中消失</p>
 <p>2.<strong>堆(Heap)：new出来的，在堆内存</strong></p>
 <p>​        堆内存里的东西都有一个地址值：16进制</p>
@@ -837,7 +865,126 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>3.方法区(Method Area)：存储.class相关信息，包含方法的信息</p>
 <p>4.本地方法栈(Native Method Stack)：与操作系统相关</p>
 <p>5.寄存器(pc Register)：与CPU相关 </p>
-<h3 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h3><table>
+<h2 id="API-Application-Programming-Interface"><a href="#API-Application-Programming-Interface" class="headerlink" title="API(Application Programming Interface)"></a>API(Application Programming Interface)</h2><p>概述:Java API程序员小词典</p>
+<h5 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h5><ul>
+<li>何为Scanner类</li>
+</ul>
+<p>可以解析基本类型和字符串的简单文本扫描器(实现键盘输入到程序中)</p>
+<ul>
+<li>Scanner的一般步骤</li>
+</ul>
+<p>1.导包</p>
+<p>2.创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+<p>​    System.in(键盘输入)</p>
+<p>3.使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象名.成员方法名</span><br><span class="line"><span class="keyword">int</span> num = sc.nextInt(); <span class="comment">// 获取键盘输入的一个int数字</span></span><br><span class="line">String str = sc.next(); <span class="comment">// 获取键盘输入的一个字符串</span></span><br></pre></td></tr></table></figure>
+<h5 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h5><ul>
+<li>何为Random类：</li>
+</ul>
+<p>用于生成随机数字的包</p>
+<ul>
+<li>Random的一般步骤：</li>
+</ul>
+<p>1.导包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random</span><br></pre></td></tr></table></figure>
+<p>2.创建</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Random r = <span class="keyword">new</span> Random();</span><br></pre></td></tr></table></figure>
+<p>3.使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = r.nextInt(); <span class="comment">// 获取一个随机的int数字,有正负两种</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(<span class="number">3</span>); <span class="comment">// 获取一个随机的int数字(参数代表范围，左闭右开区间) 范围为[0,3)</span></span><br><span class="line"><span class="keyword">int</span> num = r.nextInt(n)+<span class="number">1</span>; <span class="comment">// 取值范围为[1,n]</span></span><br></pre></td></tr></table></figure>
+<h5 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h5><ul>
+<li>何为ArrayList类</li>
+</ul>
+<p>可以实现数组的大小可变，操作内部的储存</p>
+<ul>
+<li><E> 
+
+</E></li>
+</ul>
+<p><E>表示泛型(装在集合当中的所有元素，全部都是统一的类型(引用类型而非基础类型))</E></p>
+<ul>
+<li>ArrayList的一般步骤</li>
+</ul>
+<p>1.导包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br></pre></td></tr></table></figure>
+<p>2.创建</p>
+<p>从JDK1.7+开始，右侧的尖括号内部可以不写写内容，但&lt;&gt;本身还是要写的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;数据类型&gt; list = <span class="keyword">new</span> Arraylist&lt;&gt;();</span><br></pre></td></tr></table></figure>
+<p>3.使用</p>
+<ul>
+<li>向集合中添加元素: add</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list.add(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;赵四&quot;</span>); <span class="comment">// 向集合里添加一些数据</span></span><br><span class="line">System.out.println(list); <span class="comment">// [张三，赵四]</span></span><br><span class="line"><span class="keyword">boolean</span> success = list.add(<span class="string">&quot;王五&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;添加的动作是否成功：&quot;</span>+ success); <span class="comment">// 添加的动作是否成功：true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>从集合中获取元素：get</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = list.get(<span class="number">1</span>); <span class="comment">// 索引值从0开始</span></span><br><span class="line">System.out.println(<span class="string">&quot;第一号索引位置：&quot;</span>+ name); <span class="comment">// 第一号索引位置：赵四</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>从集合中删除元素：remove</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String whoremove = list.remove(<span class="number">1</span>); <span class="comment">// 返回值是被删除的人</span></span><br><span class="line">System.out.println(<span class="string">&quot;被删除的人是：&quot;</span> + whoremove); <span class="comment">// 赵四</span></span><br><span class="line">System.out.println(list); <span class="comment">// [张三, 王五]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取集合的元素个数：size</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> size = list.size();</span><br><span class="line">System.out.println(size); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>遍历集合</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">           System.out.println(list.get(i));</span><br><span class="line">       &#125; <span class="comment">// 快捷键 list.fori</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>ArrayList集合存储基本数据类型、</li>
+</ul>
+<p>如果希望向集合ArrayList当中存储基本类型数据，必须使用基本类型对应的<strong>包装类</strong></p>
+<p>包装类：引用类型，包装类都位于java.lang包下，不需要导包</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; listA = <span class="keyword">new</span> ArrayList;</span><br><span class="line">listA.add(<span class="number">100</span>);</span><br><span class="line">System.out.println(listA.get(<span class="number">0</span>)); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+<p>从JDK1.5开始，支持自动装箱，自动拆箱</p>
+<p>​    自动装箱：基本类型–&gt;包装类型</p>
+<p>​    自动拆箱：包装类型–&gt;基本类型</p>
+<ul>
+<li>ArrayList注意事项</li>
+</ul>
+<p>对于ArrayList来说，直接打印得到的不是地址值，而是内容，若内容为空得到的时：[ ]</p>
+<h2 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h2><table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -925,7 +1072,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="IDEA常用快捷代码"><a href="#IDEA常用快捷代码" class="headerlink" title="IDEA常用快捷代码"></a>IDEA常用快捷代码</h3><table>
+<h2 id="IDEA常用快捷代码"><a href="#IDEA常用快捷代码" class="headerlink" title="IDEA常用快捷代码"></a>IDEA常用快捷代码</h2><table>
 <thead>
 <tr>
 <th>x.fori</th>
@@ -979,10 +1126,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-25T09:30:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-30T12:27:10+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 25, 2021</p>
+    <p>更新于：May 30, 2021</p>
   </a>
 </div>
 
@@ -1115,7 +1262,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%EF%BC%88OverLoad%EF%BC%89"><span class="toc-text">重载（OverLoad）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">构造方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95if"><span class="toc-text">单if</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#if-else"><span class="toc-text">if - - else</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9Aif-else"><span class="toc-text">多if - - else</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">switch语句格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">switch注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#while%E5%BE%AA%E7%8E%AF"><span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#do-while-%E5%BE%AA%E7%8E%AF"><span class="toc-text">do - - while 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">三种循环的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#break%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">break关键字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#continue%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">continue关键字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA%E7%9A%84%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">JAVA的内存划分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-text">匿名对象：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%EF%BC%88OverLoad%EF%BC%89"><span class="toc-text">重载（OverLoad）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">构造方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-text">语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA%E7%9A%84%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">JAVA的内存划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Application-Programming-Interface"><span class="toc-text">API(Application Programming Interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scanner%E7%B1%BB"><span class="toc-text">Scanner类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Random%E7%B1%BB"><span class="toc-text">Random类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ArrayList%E7%B1%BB"><span class="toc-text">ArrayList类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
     </div>
   </section>
 
