@@ -543,8 +543,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>创建的对象是谁，就优先用谁，如果没有则向上找</p>
 <p>5.方法的覆盖重写(Override)</p>
 <p>​    概念： 在继承的关系中，方法的名称一样，参数列表也一样</p>
+<blockquote>
 <p>​                重写(Override)：方法的名称一样，参数列表也一样</p>
 <p>​                重载(Overload)：方法的名称一样，参数列表不一样</p>
+</blockquote>
 <p>​    特点：创建的是子类对象，则优先用子类方法</p>
 <p>6.继承中的构造方法的访问特点</p>
 <p>​    1.子类构造方法中有一个默认隐含的“super( )”调用，所以一定是先调用的父类构造，后执行的子类构造</p>
@@ -578,27 +580,124 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>1.java语言是<strong>单继承</strong>的</p>
 <p>一个类的直接父类只能有唯一一个</p>
 <p>2.java语言可以<strong>多级继承</strong></p>
+<blockquote>
 <p>java.lang.Object是祖宗类</p>
+</blockquote>
 <p>3.一个子类的直接父类是唯一的，但是一个父类可以有很多个子类</p>
 <ul>
 <li>注意事项</li>
 </ul>
 <p>1.必须包装方法的名称相同，参数列表也相同，@Override写在方法前，用来检测是不是有效的正确覆盖重写</p>
 <p>2.子类方法的返回值必须<strong>小于等于</strong>父类方法的返回值范围，Object类是所有类的公共最高父类</p>
+<blockquote>
 <p>java.lang.String就是Object的子类</p>
+</blockquote>
 <p>3.子类方法的权限必须<strong>大于等于</strong>父类方法的权限修饰符，public &gt; protected &gt; (default) &gt; private</p>
+<blockquote>
 <p>(default)不是关键字default，而是什么都不写，留空</p>
+</blockquote>
 <p>4.无论成员方法还是成员变量，如果没有都是向上找父类，绝对不会向下找子类</p>
 <p>5.super和this两种方法构造调用，不能同时使用</p>
-<h5 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h5><p>抽象方法</p>
+<h5 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h5><ul>
+<li>抽象方法</li>
+</ul>
 <p>如果父类当中的方法不确定如何{}方法体的实现，那么这种方法叫抽象方法(eg：图像周长)</p>
 <p>在返回值类型前加上abstract并去掉大括号，直接分号结束</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>; <span class="comment">// 抽象方法，代表吃，具体吃什么不确定</span></span><br></pre></td></tr></table></figure>
-<p>抽象类</p>
+<ul>
+<li>抽象类</li>
+</ul>
 <p>抽象方法所在类，必须是抽象类才行，在class前加上abstract即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> // 抽象类，里面可以有普通的成员方法</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>抽象方法和抽象类的使用</li>
+</ul>
+<p>1.不能直接创建new抽象类对象</p>
+<p>2.必须用一个子类来继承抽象父类</p>
+<p>3.子类必须覆盖重写抽象父类当中所有的抽象方法</p>
+<blockquote>
+<p>覆盖重写(实现)：子类去掉抽象方法的abstract关键字，然后补上方法体大括号</p>
+</blockquote>
+<p>4.创建子类对象进行使用</p>
+<ul>
+<li>注意事项</li>
+</ul>
+<p>1.抽象类不能创建对象，如果创建，编译无法通过而保持，只能创建其非抽象子类的对象</p>
+<p>2.抽象类中可以有构造方法，是供子类创建对象时，初始化父类成员使用的</p>
+<p>3.抽象类中，不一定包含抽象方法，但是有抽象方法的类必定时抽象类</p>
+<p>4.抽象类的子类，必须重写抽象父类的所有的抽象方法，否则编译无法通过而报错，除非该子类也是抽象类</p>
+<h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><ul>
+<li>概述</li>
+</ul>
+<p>接口就是多个类的公共规范</p>
+<blockquote>
+<p>接口是一种引用数据类型。最重要的内容就是其中的抽象方法</p>
+</blockquote>
+<ul>
+<li>定义格式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> 接口名称 </span>&#123;</span><br><span class="line">		<span class="comment">// 接口内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接口内容可以包含：1.常量 2.抽象方法 3.默认方法 4.静态方法 5.私有方法</p>
+<p>1.接口的<strong>抽象方法</strong></p>
+<p><strong>定义</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> 返回值类型 方法名称(参数列表);</span><br><span class="line"><span class="keyword">public</span> 返回值类型 方法名称(参数列表);</span><br><span class="line"><span class="keyword">abstract</span> 返回值类型 方法名称(参数列表);</span><br><span class="line">返回值类型 方法名称(参数列表);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>接口当中的抽象方法，修饰符必须是两个固定的关键字： public abstract</li>
+<li>这两个关键字修饰符可以选择性省略</li>
+<li>方法的三要素可以随意定义</li>
+</ol>
+<p><strong>使用</strong></p>
+<ol>
+<li>接口不能直接使用，必须有一个<strong>实现类</strong>来实现该接口</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 实现类名称 <span class="keyword">implements</span> 接口名称</span>&#123;</span><br><span class="line"> 	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   2.接口的实现类必须覆盖重写(实现)接口中所有的抽象方法</p>
+<blockquote>
+<p>覆盖重写(实现) 去掉abstract关键字，加上方法体大括号</p>
+</blockquote>
+<p>   3.创建实现类的对象，进行使用</p>
+<p>   4.注意：如果实现类并没有覆盖重写接口中所有的抽象方法，那么这个接口必须是抽象类</p>
+<p>2.接口的<strong>默认方法</strong></p>
+<p><strong>定义</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">default</span> 返回值类型 方法名称(参数列表)&#123;</span><br><span class="line"> 	<span class="comment">// ...</span></span><br><span class="line">&#125; <span class="comment">// 默认方法可以有方法体</span></span><br><span class="line"><span class="keyword">default</span> 返回值类型 </span><br></pre></td></tr></table></figure>
+<ol>
+<li>接口当中的默认方法，可以解决接口升级的问题</li>
+</ol>
+<p><strong>使用</strong></p>
+<ol>
+<li>接口的默认方法，可以通过接口实现类对象，直接调用</li>
+<li>接口的默认方法，也可以通过接口实现类进行覆盖重写</li>
+</ol>
+<p>3.接口的<strong>静态方法</strong></p>
+<p><strong>定义</strong></p>
+<p>从Java 8开始接口中允许当中允许定义静态方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> 返回值类型 方法名称(参数列表)&#123;</span><br><span class="line">  	<span class="comment">// 方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用</strong></p>
+<ol>
+<li>不能通过接口实现类的对象来调用接口当中的静态方法</li>
+<li>通过接口名称直接调用其中的静态方法</li>
+</ol>
+<blockquote>
+<p>接口名称.静态方法名(参数);</p>
+</blockquote>
+<p>4.接口的<strong>私有方法</strong></p>
+<p><strong>定义</strong></p>
+<ol>
+<li>普通私有方法，解决多个默认方法之间重复代码问题</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> 返回值类型 方法名称(参数列表)&#123;</span><br><span class="line">	  <span class="comment">// 方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   2.静态私有方法，解决多个静态方法之间重复代码问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> 返回值类型 方法名称(参数列表)&#123;</span><br><span class="line">	  	<span class="comment">// 方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.接口<strong>常量</strong></p>
+<p><strong>定义</strong></p>
+<p>接口中可以定义“成员变量”，但是必须使用 public static final 三个关键字进行修饰</p>
+<p>从效果上来看，这其实就是接口的常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> 数据类型 常量名称 = 数据值;</span><br></pre></td></tr></table></figure>
 
 
+<ul>
+<li>注意事项</li>
+</ul>
 <h5 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h5><h5 id="匿名对象："><a href="#匿名对象：" class="headerlink" title="匿名对象："></a>匿名对象：</h5><p>只有右边的对象，无左边的名字和赋值运算符</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in)</span><br><span class="line"><span class="keyword">int</span> num = sc.nextInt(); <span class="comment">// 普通使用方式</span></span><br><span class="line"><span class="keyword">int</span> num = <span class="keyword">new</span> Scanner(System.in).nextInt(); <span class="comment">// 匿名对象的方式</span></span><br><span class="line">methodParam(<span class="keyword">new</span> Scanner(System.in)); <span class="comment">// 使用匿名对象来传递参数</span></span><br></pre></td></tr></table></figure>
 <p>​    注意事项：</p>
@@ -1253,10 +1352,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-05T09:47:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-08T17:00:18+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 5, 2021</p>
+    <p>更新于：Jun 8, 2021</p>
   </a>
 </div>
 
@@ -1389,7 +1488,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1"><span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-text">匿名对象：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">静态static关键字</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%EF%BC%88OverLoad%EF%BC%89"><span class="toc-text">重载（OverLoad）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">构造方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-text">语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA%E7%9A%84%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">JAVA的内存划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Application-Programming-Interface"><span class="toc-text">API(Application Programming Interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scanner%E7%B1%BB"><span class="toc-text">Scanner类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Random%E7%B1%BB"><span class="toc-text">Random类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ArrayList%E7%B1%BB"><span class="toc-text">ArrayList类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-text">String类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Arrays%E7%B1%BB"><span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Math%E7%B1%BB"><span class="toc-text">Math类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1"><span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-text">匿名对象：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">静态static关键字</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%EF%BC%88OverLoad%EF%BC%89"><span class="toc-text">重载（OverLoad）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">构造方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-text">语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA%E7%9A%84%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">JAVA的内存划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Application-Programming-Interface"><span class="toc-text">API(Application Programming Interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scanner%E7%B1%BB"><span class="toc-text">Scanner类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Random%E7%B1%BB"><span class="toc-text">Random类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ArrayList%E7%B1%BB"><span class="toc-text">ArrayList类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-text">String类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Arrays%E7%B1%BB"><span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Math%E7%B1%BB"><span class="toc-text">Math类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
     </div>
   </section>
 
