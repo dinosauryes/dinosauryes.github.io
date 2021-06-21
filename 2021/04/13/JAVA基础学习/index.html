@@ -28,7 +28,7 @@
   
 
   
-    <meta name="description" content="岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。">
+    <meta name="description" content="岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。**(已完结)**">
   
 
   <!-- feed -->
@@ -497,7 +497,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <p>岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。<a id="more"></a></p>
+  <p>岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。**(已完结)**<a id="more"></a></p>
 <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
 <li>面向过程：当需要实现一个功能时，每一个具体的步骤都要亲力亲为，详细处理每一个细节</li>
 <li>面向对象：当需要实现一个功能时，不关心具体的步骤，而是找一个以及具有该功能的，来帮我做</li>
@@ -647,6 +647,115 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名称</span>&#123;</span><br><span class="line">	<span class="keyword">static</span>&#123;</span><br><span class="line">		<span class="comment">// 静态代码块内容</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="comment">// 当第一次使用本类时，静态代码块执行唯一一次，执行优先于构造方法</span></span><br></pre></td></tr></table></figure>
 <p>用途</p>
 <p>用来一次性的对静态成员变量进行赋值</p>
+<h5 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h5><p><strong>用于修饰类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> 类名称 </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>被final修饰的类不能有任何子类(不能作为父类)</p>
+<p><strong>用于修饰方法</strong></p>
+<p>当final关键字来修饰一个方法的时候，这个方法就是最终方法，不能被覆盖重写</p>
+<p><strong>用于修饰局部变量</strong></p>
+<p>一旦使用final关键字来修饰局部变量，那么这个变量就不能进行更改</p>
+<p>对于基本类型来说不可变是变量当中的数据不可改变</p>
+<p>对于引用数据类型来说不可变是变量当中的地址值不可改变</p>
+<p><strong>用于修饰成员变量</strong></p>
+<p>对于成员变量来说，如果使用final关键字修饰那么这个变量也是不可变的</p>
+<ol>
+<li>由于成员变量具有默认值，所以用了final之后必须手动赋值，不会再给默认值</li>
+<li>对于final的成员变量，要么使用直接赋值，要么通过构造方法赋值</li>
+<li>必须包装类当中所有重载的构造方法，都最终会对final的成员变量进行赋值</li>
+</ol>
+<p><strong>四种权限修饰符</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>public</th>
+<th>protected</th>
+<th>(default)</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一个类</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>同一个包</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>不同包子类</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>不同包非子类</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody></table>
+<p>(default)并不是关键字default 而是根本不写</p>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>如果一个事物内部包含另一个事物那么这就是一个类内部包含另一个类</p>
+<p><strong>成员内部类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="class"><span class="keyword">class</span> 外部类名称 </span>&#123;</span><br><span class="line">	修饰符 <span class="class"><span class="keyword">class</span> 内部类名称</span>&#123;</span><br><span class="line">		<span class="comment">// ...</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>内用外，随意访问；外用内，需要内部类对象</p>
+<p>间接使用方式：在外部类的方法中，使用内部类；然后main只是调用外部类的方法</p>
+<p>直接使用方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外部类名称.内部类名称 对象名 = <span class="keyword">new</span> 外部类名称().new 内部类名称();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>内部类的同名变量访问</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果出现了重名现象，那么格式是：外部类名称.this.外部类成员变量名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> num = <span class="number">20</span>;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodInner</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">int</span> num = <span class="number">30</span></span><br><span class="line">            System.out.println(num); <span class="comment">// 内部类方法的局部变量，就近原则</span></span><br><span class="line">            System.out.println(<span class="keyword">this</span>.num); <span class="comment">// 内部类的成员变量</span></span><br><span class="line">            Systrm.out.println(Outer.<span class="keyword">this</span>.num); <span class="comment">// 外部类的成员变量</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>局部内部类的定义</li>
+</ul>
+<p>如果一个方法定义在一个方法内部的，那么这就是一个局部内部类</p>
+<blockquote>
+<p>局部：只有当前所属方法才能使用它，出了这个方法外面就不能用了</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">修饰符 <span class="class"><span class="keyword">class</span> 外部类名称</span>&#123;</span><br><span class="line">	修饰符 返回值类型 外部类方法名称()&#123;</span><br><span class="line">		<span class="class"><span class="keyword">class</span> 局部内部类名称</span>&#123;</span><br><span class="line">			<span class="comment">// ...</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义一个类的时候，权限符修饰规则：</p>
+<ol>
+<li>外部类：public / (default)</li>
+<li>成员内部类：public / protected / (default) / private</li>
+<li>局部内部类：什么都不能写</li>
+</ol>
+<p><strong>final问题</strong></p>
+<p>局部内部类，如果希望访问所在方法的局部变量，那么这个局部变量必须是<em>有效final</em>(变量不能值不能改变)</p>
+<blockquote>
+<p>备注：从Java 8+开始只要局部变量事实不变，那么final关键字可以省略</p>
+</blockquote>
+<p>原因：1.new出来的在堆中</p>
+<p>​           2.局部变量跟着方法走在栈内存中</p>
+<p>​           3.方法运行结束后，立刻出栈，局部变量消失</p>
+<p>​           4.new出来的对象会在堆当中持续存在，直到垃圾回收</p>
+<p><strong>匿名内部类</strong></p>
+<p>如果接口的实现类(或者父类的子类)只需要使用唯一的一次</p>
+<p>那么在这种情况下可以省略掉该类的定义，改为使用匿名内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">接口名称 对象名 = <span class="keyword">new</span> 接口名称()&#123;</span><br><span class="line">	<span class="comment">// 覆盖重写所有抽象方法</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>对格式“new 接口名称(){…}”的解析</p>
+<p>​    1.new代表创建对象的动作</p>
+<p>​    2.接口名称就是匿名内部类需要实现哪个接口</p>
+<p>​    3.{…}是匿名内部类的内容</p>
+<p>注意事项</p>
+<p>​    1.匿名内部类在<strong>创建对象</strong>时只能使用唯一的一次</p>
+<blockquote>
+<p>如果希望多次创建对象，而且类的内容一样，那么必须使用单独定义的实现类</p>
+</blockquote>
+<p>​    2.匿名对象在<strong>调用方法</strong>的时候只能使用唯一的一次</p>
+<blockquote>
+<p>如果希望同一个对象调用多次方法，那么必须有对象名</p>
+</blockquote>
+<p>​    3.匿名内部类是省略了实现类/子类，但是匿名对象是省略了对象名称</p>
 <h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><ul>
 <li>抽象方法</li>
 </ul>
@@ -1408,10 +1517,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-16T19:31:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-21T09:07:13+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jun 16, 2021</p>
+    <p>更新于：Jun 21, 2021</p>
   </a>
 </div>
 
@@ -1433,7 +1542,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dinosauryes.github.io/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title=JAVA基础学习 - Hexo&summary=岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dinosauryes.github.io/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title=JAVA基础学习 - Hexo&summary=岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。**(已完结)**"
           
           >
           
@@ -1445,7 +1554,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://dinosauryes.github.io/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title=JAVA基础学习 - Hexo&summary=岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://dinosauryes.github.io/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title=JAVA基础学习 - Hexo&summary=岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。**(已完结)**"
           
           >
           
@@ -1457,7 +1566,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://dinosauryes.github.io/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title=JAVA基础学习 - Hexo&summary=岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://dinosauryes.github.io/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title=JAVA基础学习 - Hexo&summary=岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。**(已完结)**"
           
           >
           
@@ -1544,7 +1653,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-text">匿名对象：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">静态static关键字</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1"><span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%EF%BC%88OverLoad%EF%BC%89"><span class="toc-text">重载（OverLoad）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">构造方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-text">语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA%E7%9A%84%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">JAVA的内存划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Application-Programming-Interface"><span class="toc-text">API(Application Programming Interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scanner%E7%B1%BB"><span class="toc-text">Scanner类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Random%E7%B1%BB"><span class="toc-text">Random类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ArrayList%E7%B1%BB"><span class="toc-text">ArrayList类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-text">String类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Arrays%E7%B1%BB"><span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Math%E7%B1%BB"><span class="toc-text">Math类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E8%A3%85"><span class="toc-text">封装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-text">匿名对象：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">静态static关键字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#final%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">final关键字</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">内部类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1"><span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%95%E4%B8%BA%E5%B8%B8%E9%87%8F%EF%BC%9A"><span class="toc-text">何为常量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-text">常量的分类：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ASCII%E8%A1%A8%EF%BC%9A"><span class="toc-text">ASCII表：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%BD%BD%EF%BC%88OverLoad%EF%BC%89"><span class="toc-text">重载（OverLoad）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">构造方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E5%8F%A5"><span class="toc-text">语句</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="toc-text">选择语句</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAVA%E7%9A%84%E5%86%85%E5%AD%98%E5%88%92%E5%88%86"><span class="toc-text">JAVA的内存划分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Application-Programming-Interface"><span class="toc-text">API(Application Programming Interface)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Scanner%E7%B1%BB"><span class="toc-text">Scanner类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Random%E7%B1%BB"><span class="toc-text">Random类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ArrayList%E7%B1%BB"><span class="toc-text">ArrayList类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#String%E7%B1%BB"><span class="toc-text">String类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Arrays%E7%B1%BB"><span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Math%E7%B1%BB"><span class="toc-text">Math类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">IDEA常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E4%BB%A3%E7%A0%81"><span class="toc-text">IDEA常用快捷代码</span></a></li></ol>
     </div>
   </section>
 
