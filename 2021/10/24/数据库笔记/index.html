@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -107,7 +103,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -358,7 +354,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="[object Object]"></div>
           
@@ -423,7 +419,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -434,288 +430,356 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/">
-        Oct 24, 2021
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        数据库笔记第一章模型分为两类：概念模型，逻辑模型和物理模型
-唯一标识实体的的属性集称为码
-数据库的三级模式：外模式，模式，内模式
 
-模式：逻辑模式是数据库中全体数据的逻辑结构和特征的描述
-外模式：子模式或用户模式，数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图与某一应用有关的数据的逻辑表示。
-内模式：储存模式，一个数据库只有一个内模式。它是数据物理结构和存储...
-      
+
+  
+  <div class="article-meta" id="top">
+    
+    
     
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-10-24</time>
-        
-      </div>
+  
+  <h1 id="数据库笔记"><a href="#数据库笔记" class="headerlink" title="数据库笔记"></a>数据库笔记</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a><strong>第一章</strong></h2><p>模型分为两类：概念模型，逻辑模型和物理模型</p>
+<p>唯一标识实体的的属性集称为码</p>
+<p>数据库的三级模式：外模式，模式，内模式</p>
+<blockquote>
+<p>模式：逻辑模式是数据库中全体数据的逻辑结构和特征的描述</p>
+<p>外模式：子模式或用户模式，数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图与某一应用有关的数据的逻辑表示。</p>
+<p>内模式：储存模式，一个数据库只有一个内模式。它是数据物理结构和存储方式的描述，是数据在数据库内部的组织方式。</p>
+</blockquote>
+<p>逻辑模型：层次模型，网状模型，关系模型，面对对象数据模型，对象关系数据模型，半结构化数据模型。</p>
+<p>元组是关系数据库中的基本概念，关系是一张表，表中的每行（即数据库中的每条记录）就是一个元组，每列就是一个属性。 在二维表里，元组也称为记录。</p>
+<hr>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a><strong>第二章</strong></h2><p>定义：</p>
+<ol>
+<li>域：是一组具有相同数据类型的值的集合。</li>
+<li>笛卡尔积</li>
+<li>关系</li>
+<li>主码，非主属性，非码属性</li>
+</ol>
+<p>基本关系的六条性质：</p>
+<ol>
+<li>列是同质的。</li>
+<li>不同的列可出自同一个域，称其中的每一个列为一个属性，不同的属性要给予不同的属性名。</li>
+<li>列的顺序无所谓，即列的次序可以任意交换。</li>
+<li>任意两个元组的候选码不能取相同的值。</li>
+<li>行的顺序无所谓，即行关系的次序可以任意交换。</li>
+<li>分量必须取原子值，即每一个分量都必须是不可分的数据项。</li>
+</ol>
+<p>关系完整性：实体完整性，参照完整性。</p>
+<p>实体完整性：若A是基本关系R的主属性，则A不可以取空值。</p>
+<p>关系运算：选择，投影，连接，除运算等。</p>
+<p>选择：从表中某个属性之中选择出特定的部分或者个体(<strong>行</strong>)</p>
+<p>投影：从属性列中罗列出不重复的选项(<strong>列</strong>)</p>
+<p>连接：将表连接起来，就是高级版的笛卡儿积，等值连接就是把有共同属性且相等的拉出来，自然连接就是在自然连接的基础上把其中重复的属性再去掉，非等值连接就是按照其中的规定连接起来(<strong>行，列</strong>)</p>
+<p>除：类似做成两个字典，一个字典的值对应另一个字典的键值，如果能够在第一个字典中找到相应的键值，那么就把第一个字典的键值罗列出来(<strong>行，列</strong>)</p>
+<hr>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a><strong>第三章</strong></h2><p>模式分为三级模式结构。外模式包括若干视图和部分基本表，数据库模式包括若干基本表，内模式包括若干存储文件。</p>
+<p>schema可以理解为命名空间，与database处于同一级别。<br>create schema 模式名字 authorization 用户名字 （定义）<br>drop schema 模式名字</p>
+<p>create table 表名字(表的具体定义)</p>
+<p>drop table 表名字 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名字</span><br><span class="line"><span class="keyword">add</span> <span class="keyword">column</span> 数据类型 完整性约束</span><br><span class="line"><span class="keyword">add</span> 表级完整性约束</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">column</span> 列名</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">constraint</span> 完整性约束名 restrict<span class="operator">|</span>cascade</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">column</span> 列名 数据类型</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>mysql改变表的结构：<br>alter table 名字 change 列 列 属性 </p>
+</blockquote>
+<p>删除基本表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名 restrict<span class="operator">|</span>cascade</span><br></pre></td></tr></table></figure>
+<p>前者有限制条件，不能有视图，触发器，不能有存储过程或函数，有则不能删除<br>后者没有限制条件，如果有，则全部删除。</p>
+<p>建立索引可以加快查询速度。B+树索引，散列索引，位图索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">unique</span> cluster index 索引名 <span class="keyword">on</span> 表名(列名 次序……)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>次序指的是desc降序，asc升序</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">删除索引 <span class="keyword">drop</span> index  <span class="keyword">on</span> tableName</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><del>修改索引 alter index rename to 表名</del></p>
+<p>经测试在mysql貌似不支持对索引的修改，索引应该及时地repaire或者删除重新建立</p>
+</blockquote>
+<p>数据库查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">all</span><span class="operator">|</span><span class="keyword">distinct</span> 目标列（目标列表达式）</span><br><span class="line"><span class="keyword">from</span> 表名或者视图名 (<span class="keyword">select</span> 语句 <span class="keyword">as</span> 别名)</span><br><span class="line"><span class="keyword">where</span> 条件表达式</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> 列名 <span class="keyword">having</span> 条件表达式</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> 列名 <span class="keyword">asc</span><span class="operator">|</span><span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p>字符匹配 谓词like’匹配串‘<br>通配符 _ 代表单个任意字符 % 代表任意长度（可以为0）的字符串<br>当选择为空的时候，必须使用is而不能使用=</p>
+<p>聚集函数<br>count(*) count(列名) sum,avg,max,min<br><strong>注意</strong>：where子句中是不能用聚集函数作为条件表达式的，聚集函数只能用于select 子句和group by中的having子句中。</p>
+<p>连接查询<br>等值连接查询，自然连接查询，非等值连接查询，自身连接查询，外连接查询，复合条件连接查询<br>那目标列中的重复的属性去掉为自然连接<br>将一个表取别名，则为自身连接<br>外连接则为，将两者相同的属性进行连接，没有的属性用NULL补全。左连接则保留左边关系，右连接保留右边关系。<br>查询可加入exist 和 not exist进行限制，只关心内层查询是否有返回值</p>
+<p>集合查询<br>并，交，差<br>union将查询结果进行合并的时候，自动去掉重复元素。如果保留重复元素，使用union all。<br>Intersect：对两个结果集进行交集操作，不包括重复行，同时进行默认规则的排序；<br>Minus：对两个结果集进行差操作，不包括重复行，同时进行默认规则的排序。</p>
+<p>插入子查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 属性 </span><br></pre></td></tr></table></figure>
+<p>子查询</p>
+<p>修改数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表名</span><br><span class="line"><span class="keyword">set</span> 列名 <span class="operator">=</span> 表达式名 </span><br><span class="line"><span class="keyword">where</span> 条件表达式</span><br></pre></td></tr></table></figure>
+<p>删除数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> </span><br><span class="line"><span class="keyword">from</span> 表名</span><br><span class="line"><span class="keyword">where</span> 条件表达式</span><br></pre></td></tr></table></figure>
+<p>视图</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create view 视图名 （列名……）&#123;这里的列名可以选择，起不起别名&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">as</span> </span><br><span class="line"></span><br><span class="line">子查询</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="keyword">check</span> option</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>检查表示对视图进行update，insert，delete操作的时候要保证更新、插入或者删除</p>
+<blockquote>
+<p>视图在msql显示在table中，但是删除的时候必须删除view而不可以删除table</p>
+</blockquote>
+<p>删除视图<br>drop view 视图名 （cascade）<br>级联删除可以将该视图和它导出的视图都删除</p>
+<p>更新视图<br>由于视图是不存在的虚表，所以对视图的更新最终都会转化为对基本表的更新。</p>
+<blockquote>
+<p>规定：</p>
+<ol>
+<li>若视图是由两个以上的基本表导出的，则此视图不允许更新</li>
+<li>若视图的字段来自字段表达式或常熟，则不允许对此视图进行insert和update操作，但允许进行delete操作</li>
+<li>若视图的字段来自聚集函数，则此视图不允许更新</li>
+<li>若视图定义中含有group by子句，则此视图不允许更新</li>
+<li>若视图定义中含有distinct短语，则此视图不允许更新</li>
+<li>若视图定义中有嵌套查询，并且内层查询的from子句中涉及的表也是导出该视图的基本表，则此视图不允许更新。</li>
+<li>一个不允许更新的视图上定义的视图也不允许更新</li>
+</ol>
+<p><strong>视图的作用</strong></p>
+</blockquote>
+<ol>
+<li>视图可以简化用户的操作</li>
+<li>视图使用户能以多种角度看待同一数据</li>
+<li>视图对重构数据库提供了一定程度的逻辑独立性</li>
+<li>视图能够对机密数据提供安全保护</li>
+<li>适当利用视图可以更清晰地表达查询</li>
+</ol>
+<hr>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a><strong>第四章</strong></h2><p>授权</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> 权限</span><br><span class="line"></span><br><span class="line"><span class="keyword">on</span> 对象类型 对象名</span><br><span class="line"></span><br><span class="line"><span class="keyword">to</span> 用户</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>【with grant option】<br>如果指定了最后一句，则获得该权限的用户还可以把这种权限再授予其他用户。</p>
+<blockquote>
+<p>不允许循环授予权限</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">收回权限</span><br><span class="line"></span><br><span class="line"><span class="keyword">revoke</span> 权限</span><br><span class="line"></span><br><span class="line"><span class="keyword">on</span> 对象类型 对象名</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> 用户</span><br></pre></td></tr></table></figure>
+<p>创建用户<br>create user ’名字‘@’主机‘ identified by ‘密码’<br>删除用户<br>drop user ’名字‘@’主机‘</p>
+<hr>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a><strong>第五章</strong></h2><p>定义实体完整性：即定义主码，分为列级定义主码，表级定义主码</p>
+<p>定义参照完整性：即定义外码</p>
+<p>约束条件：1. 不允许取空值 2. 列值唯一 3. 用check短语指定列值应该满足的条件</p>
+<p>断言：</p>
+<p>create assertion 断言名 check子句</p>
+<p>断言创建以后，任何对断言中所涉及关系的操作都会触发关系数据库管理系统对断言的检查，任何使断言不为真值的操作都会被拒绝执行。</p>
+<p>创建存储过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE PROCEDURE sp_name ([ proc_parameter ]) [ characteristics..] routine_body </span><br><span class="line">proc_parameter指定存储过程的参数列表，列表形式如下：</span><br><span class="line">[IN|OUT|INOUT] param_name type</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中in表示输入参数，out表示输出参数，inout表示既可以输入也可以输出；param_name表示参数名称；type表示参数的类型</p>
+</blockquote>
+<p>该类型可以是MYSQL数据库中的任意类型</p>
+<p>触发器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TRIGGER trigger_name trigger_time trigger_event</span><br><span class="line">	ON tbl_name FOR EACH ROW trigger_stmt</span><br><span class="line">begin</span><br><span class="line">…………</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>其中after指动作发生之后在进行操作，而before指的是动作发生之前进行的操作。</p>
+<p>before失败，不会触发触发器的效果，after失败的话，会进行事务回滚。</p>
+<p>分为行级和语句级触发器，语句级为for each statement(MYSQL不允许语句级的触发器)</p>
+<hr>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a><strong>第六章</strong></h2><p>数据依赖是一个关系内部属性与属性之间的一种约束关系。是通过属性之间的值的相等与否体现出来的数据间的相关联系。最重要的为<strong>函数依赖</strong>和<strong>多值依赖</strong></p>
+<p>平凡的函数依赖是必然成立的。</p>
+<p>$X\rightarrow Y$，但 $Y\nsubseteq X$，则称$X \rightarrow Y$是非平凡的函数依赖。</p>
+<p>x称为决定因素。</p>
+<p>如果$X \rightarrow Y$，并且对于x的任何一个真子集x’，都有$X’\nrightarrow Y$，则y对x完全函数依赖，记做 $ X\stackrel{F}{\longrightarrow} Y$ </p>
+<p>如果$X\rightarrow Y$ ，但Y不完全函数依赖于X，则称Y对于X部分函数依赖，记做$X\stackrel{P}{\longrightarrow} Y$</p>
+<p>传递函数依赖中，$X\nrightarrow Y$是为了不要变成直接函数依赖。</p>
+<p><strong>范式</strong> ：关系数据库中的关系是要满足一定要求的，满足不同程度要求的为不同范式。</p>
+<p><strong>2NF</strong>： 若$R\in 1NF$  ，且每一个非主属性完全函数依赖于任何一个候选码，则$R\in 2NF$</p>
+<p><strong>3NF</strong>： 每一个非主属性既不传递依赖于码，也不部分依赖于码。</p>
+<p><strong>BCNF</strong>：每一个决定因素都包含码。</p>
+<blockquote>
+<p>所有非主属性对每一个码都是完全函数依赖</p>
+<p>所有主属性对每一个不包含它的码也是完全函数依赖</p>
+<p>没有任何属性完全函数依赖于非码的任何一组属性</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>： 这里指的都是非主属性</p>
+<p>3NF——只消除非主属性对主属性的传递依赖；<br>BCNF——消除所有属性对主属性的传递依赖。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/Rouzip/learning_notes/master/PICTURES/ts.PNG" class="lazyload" data-srcset="https://raw.githubusercontent.com/Rouzip/learning_notes/master/PICTURES/ts.PNG" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="ts"></p>
+<p><strong>函数依赖</strong>就像是函数一样，自变量唯一确定值；<strong>多值依赖</strong>则不一样，自变量可能决定多个值。</p>
+<p><strong>多值依赖的性质</strong>：</p>
+<ol>
+<li>多值依赖具有对称性</li>
+<li>多值依赖具有传递性</li>
+<li>函数依赖可以看作是多值依赖的特殊情况</li>
+<li>若$X\rightarrow \rightarrow Y$ ，$X\rightarrow \rightarrow Z$ ,则$X\rightarrow \rightarrow YZ$</li>
+<li>若$X\rightarrow \rightarrow Y$，$X\rightarrow \rightarrow Y$，则$X\rightarrow \rightarrow Y\cap Z$ </li>
+<li>若$X\rightarrow \rightarrow Y$，$X\rightarrow \rightarrow Z$，则$X\rightarrow \rightarrow Y-Z$，$X\rightarrow \rightarrow Z-Y$ </li>
+</ol>
+<p>函数依赖与多值依赖的区别：</p>
+<ol>
+<li>多值依赖是元组产生依赖，函数依赖是相等产生依赖。</li>
+<li>多值依赖的有效性与属性集的范围有关，而函数依赖的有效性则与属性集的范围无关。</li>
+</ol>
+<p>若X$\rightarrow$Y在R(U)上成立，则对于$\forall$Y′$\subseteq$Y，X$\rightarrow$Y′均成立。而若X$\rightarrow$$\rightarrow$Y在R(U)上成立，则不能断言对于Y′$\subseteq$Y，有X$\rightarrow$$\rightarrow$Y ′成立。（即函数依赖是相等依赖，多值依赖是元组产生依赖）</p>
+<p>在多值依赖的范围内，属于4NF的关系模式已达到了最高的规范化程度</p>
+<p>（！！！前提为简单的二元分解）R2&lt;U2 , F2&gt;是具有无损连接性的分解的充分必要条件是：(U1∩U2$\rightarrow$U1-U2)$\in F^+$或者(U1∩U2$\rightarrow$U2-U1)$\in F^+$，除此以外还可以使用表格法来判断是否是无损连接。</p>
+<p><strong>模式分解的若干结论</strong>：</p>
+<ol>
+<li>分解具有无损连接性和分解保持函数依赖是两个互相独立的标准。具有无损连接性的分解不一定保持函数依赖，保持函数依赖的分解不一定具有无损连接性。一个关系模式的分解可能有三种情况</li>
+<li>若要求分解具有无损连接性，那么分解后的模式一定能达到BCNF</li>
+<li>若要求分解保持函数依赖，那么分解后的模式总可以达到3NF，但不一定能达到BCNF</li>
+<li>若要求分解既具有无损连接性，又保持函数依赖，则分解后的模式可以达到3NF，但不一定能达到BCNF</li>
+</ol>
+<p><strong>求解最小函数依赖集分三步</strong>:</p>
+<ol>
+<li>将F中的所有依赖右边化为单一元素</li>
+<li>去掉F中的所有依赖左边的冗余属性.</li>
+<li>去掉F中所有冗余依赖关系.</li>
+</ol>
+<p><strong>闭包的运算过程</strong>：</p>
+<ol>
+<li>设最终将成为闭包的属性集是Y，把Y初始化为X</li>
+<li>检查F中的每一个函数依赖A→B，如果属性集A中所有属性均在Y中，而B中有的属性不在Y中，则将其加入到Y中</li>
+<li>重复第二步，直到没有属性可以添加到属性集Y中为止。 最后得到的Y就是X＋</li>
+</ol>
+<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a><strong>第七章</strong></h2><p>ER图规定：</p>
+<ol>
+<li>实体型用矩形表示</li>
+<li>属性用椭圆形表示</li>
+<li>联系用菱形表示</li>
+</ol>
+<p>ER图转化为关系模型：</p>
+<ol>
+<li>一个1：1联系可以转化为一个独立的关系模型，也可以与任意一端对应的关系模型合并</li>
+<li>一个1：n联系可以转化为一个独立的关系模型，也可以与n端对应的关系模型合并</li>
+<li>一个m：n联系转换为一个关系模型，与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，各实体的码组成关系的码或关系码的一部分</li>
+<li>三个或三个以上实体间的一个多元联系可以转换为一个关系模式</li>
+<li>具有相同码的关系模式可以合并</li>
+</ol>
+<p>疑问：</p>
+<ol>
+<li>大前提为多个表，如果触发器定义完之后，往里面插入信息的时候，会破坏触发器，怎么办？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/'>
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://dinosauryes.github.io/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/>http://dinosauryes.github.io/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-04-20T20:26:58+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 20, 2018</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/06/21/JavaFX%E6%A1%8C%E9%9D%A2%E5%BC%80%E5%8F%91-GUI/">
-        JavaFX桌面开发_GUI
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-06-21</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/06/21/JavaFX%E6%A1%8C%E9%9D%A2%E5%BC%80%E5%8F%91-GUI/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
+          
 
-</div>
-
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0/">
-        区块链学习
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>2021华为区块链高校大赛</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-26</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
-        JAVA基础学习
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>岁月悠悠 衰微只及肌肤，热忱抛却 颓废必至灵魂。**(已完结)**</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-04-13</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/13/JAVA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/">
-        记录Hexo博客的创建
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>​       经历了数次失败，现开门见山的讲述使用Github 和 Hexo 搭建属于自己的博客</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-01-06</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/01/06/%E8%AE%B0%E5%BD%95Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9B%E5%BB%BA/'>
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/01/06/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://dinosauryes.github.io/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/&title= - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://dinosauryes.github.io/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/&title= - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://dinosauryes.github.io/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/&title= - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2021-01-06</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/01/06/hello-world/'>
-            Read More
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/06/21/JavaFX%E6%A1%8C%E9%9D%A2%E5%BC%80%E5%8F%91-GUI/'>
+          <p class='title'>JavaFX桌面开发_GUI<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'></p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
+
+
+
+
 
 
 </div>
@@ -725,120 +789,22 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/JAVA/" style="font-size: 14px; color: #999">JAVA</a> <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 14px; color: #999">区块链</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-text">第一章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-text">第二章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-text">第三章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0"><span class="toc-text">第六章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0"><span class="toc-text">第七章</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-      
-        height='64px'
-      />
-    
-      <img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-      
-        height='64px'
-      />
-    
-  </div>
-</section>
 
   
 
@@ -860,14 +826,14 @@ Qu...
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="full";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
